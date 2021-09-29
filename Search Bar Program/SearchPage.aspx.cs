@@ -45,9 +45,11 @@ namespace WebApplication1
                 {
                     if (searchText == drDQ.GetValue(columntype).ToString())
                     {
+                        
                         lblResults.Text = drDQ.GetValue(0).ToString();
                         for (int i = 1; i <= 6; i++)
                         {
+
                             lblResults.Text += (" " + drDQ.GetValue(i).ToString());
                         }
                     }
