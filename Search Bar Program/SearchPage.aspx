@@ -10,22 +10,38 @@
     <link href="SearchStlye.css" rel="stylesheet" type="text/css" />
     <form id="form1" runat="server">
 
+        <style>
+        .center {
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: left;
+        margin: 1px;
+        }
 
-        <div class ="outer">
+        .outer {
+        margin: 1px;
+        display: inline-block;
+        }</style>
+
+
+
+        <div class ="center">
                 <div id ="searchButton">
-                    <asp:Button class="center" ID="btnSearch" runat="server" OnClick="Button1_Click" Text="Search" BorderStyle="Groove" />
+                    <asp:Button class="outer" ID="btnSearch" runat="server" OnClick="Button1_Click" Text="Search" BorderStyle="Groove" />
                 </div>
 
 
                <div id ="searchBox">
-                    <asp:TextBox class="center" ID="txtSearch" runat="server" BorderStyle="Groove"></asp:TextBox>
+                    <asp:TextBox class="outer" ID="txtSearch" runat="server" BorderStyle="Groove"></asp:TextBox>
                 </div>
 
 
                 <div id ="searchDropdown">
                      <asp:DropDownList ID="drpSearchType" 
                          runat="server" 
-                         class="center">
+                         class="outer">
                      <asp:ListItem>--Select--</asp:ListItem>
                      <asp:ListItem Value="Course_ID">Course ID</asp:ListItem>
                      <asp:ListItem Value="Course_Name">Course Name</asp:ListItem>
