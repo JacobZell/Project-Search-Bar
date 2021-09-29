@@ -10,11 +10,16 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
+
     public partial class WebForm1 : System.Web.UI.Page
     {
+        string userType;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (userType == "Admin") {
+                btnAdmin.Visible = true;
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -24,6 +29,15 @@ namespace WebApplication1
             catch { }
         }
 
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            gridviewCourses.Visible = true;
+        }
+
+        protected void btnAdmins_Click(object sender, EventArgs e)
+        {
+            setUser("Admin");
+        }
 
         private void search(){
             if (validiatyCheck())
@@ -83,5 +97,15 @@ namespace WebApplication1
             }
             return valid;
         }
+
+        public void setUser(string usertype) {
+            userType = usertype;
+            if (userType == "Admin")
+            {
+                btnAdmin.Visible = true;
+            }
+        }
+
+        
     }
 }

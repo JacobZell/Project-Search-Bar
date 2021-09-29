@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
 
         <style>
-        .center {
+            .center {
         position: absolute;
         left:50%;
         top:50%;
@@ -28,6 +28,11 @@
 
 
         <div class ="center">
+                <div id ="resultsLabel">
+                    <asp:Label ID="lblResults" runat="server" Text="Results Pint Here"></asp:Label>
+                 </div>  
+            
+
                 <div id ="searchButton">
                     <asp:Button class="outer" ID="btnSearch" runat="server" OnClick="Button1_Click" Text="Search" BorderStyle="Groove" />
                 </div>
@@ -50,13 +55,13 @@
                 </div>
             </div>
 
-        <div id ="resultsLabel">
-            <asp:Label ID="lblResults" runat="server" Text="Results Pint Here"></asp:Label>
-        </div>
+
+        
 
             
         <div id ="adminButton">
-            <asp:Button ID="btnAdmin" runat="server" Text="Modify Courses" Visible="False" />
+            <asp:Button ID="btnAdmin" runat="server" Text="Modify Courses" Visible="False" OnClick="btnAdmin_Click" />
+            <asp:Button ID="btnAdmins" runat="server" OnClick="btnAdmins_Click" Text="Enable Admin" />
         </div>
 
 
