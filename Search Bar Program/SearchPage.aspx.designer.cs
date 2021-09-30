@@ -33,13 +33,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lblResults;
 
         /// <summary>
-        /// btnSearch control.
+        /// drpSearchType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.DropDownList drpSearchType;
 
         /// <summary>
         /// txtSearch control.
@@ -51,13 +51,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
 
         /// <summary>
-        /// drpSearchType control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpSearchType;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
         /// btnAdmin control.

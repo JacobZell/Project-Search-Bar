@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -21,18 +22,26 @@ namespace WebApplication1
                 btnAdmin.Visible = true;
             }
         }
+
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             try {
                 search();
             }
+            catch (ArgumentNullException) {
+                txtSearch.Text = "Enter Search Term";
+;            }
+
             catch { }
         }
+
 
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
             gridviewCourses.Visible = true;
         }
+
 
         protected void btnAdmins_Click(object sender, EventArgs e)
         {
@@ -85,27 +94,41 @@ namespace WebApplication1
         }
 
 
-        /// Logan knows what this does but im guessing it just makes sure things are supposed to be happening
+        /// Makes sure there is text in the box and if there isnt it throws a null reference exception
         /// 
-        /// output: True: ??? false: ???
+        /// output: True: Valid search false: null search
         private bool validiatyCheck()
         {
             bool valid = false;
-            if (drpSearchType.SelectedItem.Text != "--Select--")
+            if (txtSearch.Text!="")
             {
                 valid = true;
+            }
+            else
+            {
+                throw new ArgumentNullException();
+                valid = false;
             }
             return valid;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usertype"></param>
         public void setUser(string usertype) {
             userType = usertype;
             if (userType == "Admin")
             {
                 btnAdmin.Visible = true;
             }
+            
         }
 
-        
+        protected void gridviewCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
